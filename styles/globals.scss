@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .icon {
+    @apply lg:inline-flex p-2 h-10 w-10 text-gray-600 cursor-pointer hover:bg-gray-300 rounded-full bg-gray-200 active:scale-95 transition-transform duration-200 ease-out;
+  }
+}
+@layer components {
+  .click_scale {
+    @apply active:scale-95 transition-transform duration-200 ease-out;
+  }
+}
+
+// Sroll bar
+.side_bar {
+  &:hover {
+    & :-webkit-scrollbar-thumb {
+      @apply bg-gray-300;
+      border-radius: 10px;
+    }
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-200;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-transparent h-32;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-300;
+}
