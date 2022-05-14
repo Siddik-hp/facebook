@@ -3,11 +3,9 @@ import React, { useRef, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import { CameraIcon, VideoCameraIcon } from '@heroicons/react/solid'
 import { EmojiHappyIcon } from '@heroicons/react/outline'
-import { colRef, db, stroage } from '../../../firebase'
+import { colRef, stroage } from '../../../firebase'
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 import { addDoc, setDoc, doc } from 'firebase/firestore'
-import toast, { Toaster } from 'react-hot-toast'
-import { v4 } from 'uuid'
 
 
 const InputBox = () => {
@@ -60,7 +58,6 @@ const InputBox = () => {
   const { data: session } = useSession()
   return (
     <div className='mt-10 bg-white shadow-md  rounded-md max-w-md md:mx-auto font-medium '>
-      <Toaster />
       <div className='flex space-x-3 border-b p-4'>
         <Image alt="user" width={40} height={40} layout="fixed" src={session.user.image} className="rounded-full object-cover hover:animate-pulse cursor-pointercls" />
         {/* input form */}
