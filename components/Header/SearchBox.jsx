@@ -8,8 +8,16 @@ const SearchBox = ({ Icon, Show }) => {
             <ArrowLeftIcon onClick={() => { settoggle(!toggle) }} className='click_scale h-10 text-gray-400 cursor-pointer ml-3 my-3 hover:bg-gray-200 px-2 rounded-full py-2' />
             <input type="text" placeholder='Search Facebook' className=' bg-gray-200 px-4 py-2 rounded-full outline-none flex-shrink items-center ' />
             <div className="mt-2">
+                <div className="hover:bg-gray-200 px-2 py-1 rounded cursor-pointer flex items-center justify-between flex-row group">
+                    <p >Siddik hp </p>
+                    <Icon className="w-4 h-4 active:group-hidden" />
+                </div>
                 <div className="hover:bg-gray-200 px-2 py-1 rounded cursor-pointer flex items-center justify-between flex-row">
-                    <p >Akhi </p>
+                    <p >Ayan </p>
+                    <Icon className="w-4 h-4" />
+                </div>
+                <div className="hover:bg-gray-200 px-2 py-1 rounded cursor-pointer flex items-center justify-between flex-row">
+                    <p >Ranuma </p>
                     <Icon className="w-4 h-4" />
                 </div>
 

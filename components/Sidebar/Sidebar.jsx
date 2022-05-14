@@ -13,7 +13,7 @@ const Sidebar = () => {
 
     return (
         <>
-            <div className={`max-w-[400px] xl:min-w-[300px] mt-4 p-2  overflow-y-auto  md:block  ${SliderShow ? "block absolute top-10 w-full bg-white shadow-lg rounded-lg z-50" : "hidden"}  h-screen overflow-y-auto`}>
+            <div className={`  sidebar max-w-[400px] xl:min-w-[300px] mt-4 p-2   md:block  ${SliderShow ? "block absolute top-10 w-full bg-white shadow-lg rounded-lg z-50" : "hidden"} h-[90vh] overflow-y-auto scrollbar-hide`}>
                 <SidebarRow src={session.user.image} title={session.user.name} />
                 <SidebarRow Icon={UsersIcon} title="Friends" />
                 <SidebarRow Icon={UserGroupIcon} title="Groups" />
@@ -22,7 +22,7 @@ const Sidebar = () => {
                 <SidebarRow Icon={ClockIcon} title="Event's" />
                 <SidebarRow Icon={CalendarIcon} title="Memories" />
                 <SidebarRow Icon={ChevronDownIcon} onClick={() => { setShowMore(!ShowMore) }} title="Show More" />
-                <div className={`${ShowMore ? "block" : "hidden"}`}>
+                <div className={`${ShowMore ? "block " : "hidden"}`}>
                     <SidebarRow Icon={UsersIcon} title="Friends" />
                     <SidebarRow Icon={UserGroupIcon} title="Groups" />
                     <SidebarRow Icon={ShoppingBagIcon} title="Marketplace" />

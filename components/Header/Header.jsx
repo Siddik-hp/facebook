@@ -9,13 +9,15 @@ import Link from 'next/link';
 import SearchBox from './SearchBox';
 import Profile from "./Profile";
 import { useAppContext } from "../../hooks/contex/state";
+import { signOut } from "next-auth/react"
+
 const Header = () => {
     const [SliderShow, setSliderShow] = useAppContext()
     const { data: session } = useSession()
     const [toggle, settoggle] = useState(false)
     const [profileToggle, setProfileToggle] = useState(false)
     return (
-        <div className=' flex justify-between items-center px-5 py-2 lg:px-5 lg:py-1  shadow-md bg-white sticky top-0  z-50 w-full '>
+        <div className=' flex justify-between items-center px-5 py-2 lg:px-5 lg:py-1  shadow-md bg-white sticky top-0 z-50 w-full  '>
             {/* Left Side */}
             <div className='flex items-center '>
                 <Link href={"/"} passHref>
@@ -41,7 +43,7 @@ const Header = () => {
                 </div>
             </div>
             {/* right  Right*/}
-            <div className='flex items-center justify-end space-x-3'>
+            <div className='hidden md:flex items-center justify-end space-x-3'>
                 <ViewGridIcon className="icon " />
                 <ChatIcon className="icon " />
                 <BellIcon className="icon " />
@@ -49,6 +51,9 @@ const Header = () => {
                 {
                     profileToggle && <Profile />
                 }
+            </div>
+            <div className="md:hidden">
+                <Image src={session.user.image} width={40} height={40} alt="image" className="rounded-full hover:animate-pulse cursor-pointer" onClick={signOut} />
             </div>
         </div>
     )
