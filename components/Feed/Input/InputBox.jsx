@@ -7,7 +7,7 @@ import { colRef, stroage } from '../../../firebase'
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 import { addDoc, setDoc, doc } from 'firebase/firestore'
 
-
+import { v4 } from 'uuid'
 const InputBox = () => {
   // input
   const inputRef = useRef(null)
@@ -62,7 +62,7 @@ const InputBox = () => {
         <Image alt="user" width={40} height={40} layout="fixed" src={session.user.image} className="rounded-full object-cover hover:animate-pulse cursor-pointercls" />
         {/* input form */}
         <form className=" flex flex-1" method='POST' onSubmit={postSubmit}>
-          <input ref={inputRef} type="text" name="message" placeholder={`What's on your mind, ${session.user.name}`} className="outline-none px-4 py-2 rounded-full bg-gray-200 w-full hover:bg-gray-300 cursor-pointer" />
+          <input ref={inputRef} type="text" name="message" placeholder={`What's on your mind, ${session.user.name}`} className="outline-none px-4 py-2 rounded-full bg-gray-200 w-full hover:bg-gray-300 cursor-pointer" autoComplete='off' />
           <button type="submit" hidden >Submit</button>
         </form>
       </div>

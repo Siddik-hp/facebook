@@ -14,7 +14,9 @@ const Sidebar = () => {
     return (
         <>
             <div className={`  sidebar max-w-[400px] xl:min-w-[300px] mt-4 p-2   md:block  ${SliderShow ? "block absolute top-10 w-full bg-white shadow-lg rounded-lg z-50" : "hidden"} h-[90vh] overflow-y-auto scrollbar-hide`}>
-                <SidebarRow src={session.user.image} title={session.user.name} />
+                <a rel='noreferrer' target={"_blank"} href='https://facebook.com/lxsiddikxx'>
+                    <SidebarRow src={session.user.image} title={session.user.name} />
+                </a>
                 <SidebarRow Icon={UsersIcon} title="Friends" />
                 <SidebarRow Icon={UserGroupIcon} title="Groups" />
                 <SidebarRow Icon={ShoppingBagIcon} title="Marketplace" />

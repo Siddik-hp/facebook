@@ -4,14 +4,11 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import { colRef } from '../../../firebase';
 import { orderBy } from 'firebase/firestore';
 const FbPost = () => {
-    // setData(facebookPosts)
-    const [realtimePost, loading, error] = useCollection(colRef);
-
-
+    const [realtimePost, loading, error] = useCollection(colRef, orderBy("timestamp", "asc"));
     return (
         <div className='mx-auto'>
             {
-                realtimePost?.docs.reverse().map((post) => {
+                realtimePost?.docs.map((post) => {
                     return (
                         <>
                             <SingleFbPost post={post.data()} />
